@@ -1,14 +1,14 @@
 {
-    "name": "GIT_USER_ID/GIT_REPO_ID",
-    "description": "",
+    "name": "mkopus/riskscreen-php-sdk",
+    "description": "PHP SDK for riskscreen service",
     "keywords": [
         "swagger",
         "php",
         "sdk",
         "api"
     ],
-    "homepage": "http://swagger.io",
-    "license": "proprietary",
+    "homepage": "https://riskscreen.com",
+    "license": "MIT",
     "authors": [
         {
             "name": "Swagger and contributors",
