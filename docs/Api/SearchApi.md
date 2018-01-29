@@ -18,15 +18,16 @@ Method | HTTP request | Description
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\SearchApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+// Configure API key authorization: APIKeyHeader
+Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+
+$api_instance = new Swagger\Client\Api\SearchApi();
 $new_search = new \Swagger\Client\Model\WebSearchCompany(); // \Swagger\Client\Model\WebSearchCompany | 
 
 try {
-    $result = $apiInstance->searchCompany($new_search);
+    $result = $api_instance->searchCompany($new_search);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SearchApi->searchCompany: ', $e->getMessage(), PHP_EOL;
@@ -46,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[APIKeyHeader](../../README.md#APIKeyHeader)
 
 ### HTTP request headers
 
@@ -65,15 +66,16 @@ No authorization required
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\SearchApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+// Configure API key authorization: APIKeyHeader
+Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+
+$api_instance = new Swagger\Client\Api\SearchApi();
 $new_search = new \Swagger\Client\Model\WebSearchPerson(); // \Swagger\Client\Model\WebSearchPerson | 
 
 try {
-    $result = $apiInstance->searchPerson($new_search);
+    $result = $api_instance->searchPerson($new_search);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SearchApi->searchPerson: ', $e->getMessage(), PHP_EOL;
@@ -93,7 +95,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[APIKeyHeader](../../README.md#APIKeyHeader)
 
 ### HTTP request headers
 

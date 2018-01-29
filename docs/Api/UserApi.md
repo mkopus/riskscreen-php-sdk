@@ -18,14 +18,15 @@ Method | HTTP request | Description
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\UserApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+// Configure API key authorization: APIKeyHeader
+Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+
+$api_instance = new Swagger\Client\Api\UserApi();
 
 try {
-    $result = $apiInstance->userCurrentUser();
+    $result = $api_instance->userCurrentUser();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UserApi->userCurrentUser: ', $e->getMessage(), PHP_EOL;
@@ -42,7 +43,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[APIKeyHeader](../../README.md#APIKeyHeader)
 
 ### HTTP request headers
 
@@ -61,14 +62,15 @@ No authorization required
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\UserApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+// Configure API key authorization: APIKeyHeader
+Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+
+$api_instance = new Swagger\Client\Api\UserApi();
 
 try {
-    $result = $apiInstance->userTokenQuery();
+    $result = $api_instance->userTokenQuery();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UserApi->userTokenQuery: ', $e->getMessage(), PHP_EOL;
@@ -85,7 +87,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[APIKeyHeader](../../README.md#APIKeyHeader)
 
 ### HTTP request headers
 
