@@ -154,7 +154,8 @@ class SearchApi
                 '/api/v1/search/bycompany'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\WebSearchCompany', $httpHeader), $statusCode, $httpHeader];
+            //return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\WebSearchCompany', $httpHeader), $statusCode, $httpHeader];
+            return [$response, $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
@@ -233,8 +234,8 @@ class SearchApi
                 '\Swagger\Client\Model\WebSearchPerson',
                 '/api/v1/search/byperson'
             );
-
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\WebSearchPerson', $httpHeader), $statusCode, $httpHeader];
+            //return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\WebSearchPerson', $httpHeader), $statusCode, $httpHeader];
+            return [$response, $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
