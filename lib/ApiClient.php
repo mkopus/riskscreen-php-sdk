@@ -152,9 +152,9 @@ class ApiClient
         // form data
         if ($postData and in_array('Content-Type: application/x-www-form-urlencoded', $headers, true)) {
             $postData = http_build_query($postData);
-        } elseif ((is_object($postData) or is_array($postData)) and !in_array('Content-Type: multipart/form-data', $headers, true)) { // json model
+        }/*  elseif ((is_object($postData) or is_array($postData)) and !in_array('Content-Type: multipart/form-data', $headers, true)) { // json model
             $postData = json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($postData));
-        }
+        } */
 
         $url = $this->config->getHost() . $resourcePath;
 
@@ -202,6 +202,7 @@ class ApiClient
         if ($this->config->getAllowEncoding()) {
             curl_setopt($curl, CURLOPT_ENCODING, '');
         }
+        $postData = json_encode($postData);
 
         if ($method === self::$POST) {
             curl_setopt($curl, CURLOPT_POST, true);
@@ -274,24 +275,24 @@ class ApiClient
                 return [$http_body, $response_info['http_code'], $http_header];
             }
 
-            $data = json_decode($http_body);
+            /* $data = json_decode($http_body);
             if (json_last_error() > 0) { // if response is a string
                 $data = $http_body;
-            }
+            } */
         } else {
-            $data = json_decode($http_body);
+            /* $data = json_decode($http_body);
             if (json_last_error() > 0) { // if response is a string
                 $data = $http_body;
-            }
+            } */
 
             throw new ApiException(
                 "[".$response_info['http_code']."] Error connecting to the API ($url)",
                 $response_info['http_code'],
-                $http_header,
-                $data
+                $http_header
+                //$data
             );
         }
-        return [$data, $response_info['http_code'], $http_header];
+        return [$http_body, $response_info['http_code'], $http_header];
     }
 
     /**
